@@ -5,5 +5,6 @@ export async function apiGet(queryString) {
     r.json()
   );
 
+  // eslint-disable-next-line
   return reponse;
 }
