@@ -1,6 +1,11 @@
+/* eslint-disable */
 import React, { useEffect, useReducer } from 'react';
-import { useParams } from 'react-router';
 import { apiGet } from '../misc/config';
+import { useParams } from 'react-router';
+import ShowMainData from '../components/show/ShowMainData';
+import Seasons from '../components/show/Seasons';
+import Details from '../components/show/Details';
+import Cast from '../components/show/Cast';
 
 const reducer = (prevState, action) => {
   switch (action.type) {
@@ -46,14 +51,42 @@ const Show = () => {
     };
   }, [id]);
 
+  console.log(show);
+
   if (isLoading) {
     return <div>Data is being Loading</div>;
-  }
-  if (error) {
+  } else if (error) {
     return <div>Error Ouccerd :</div>;
   }
+  return (
+    <div>
+      <ShowMainData
+        image={show.image}
+        name={show.name}
+        rating={show.rating}
+        summary={show.summary}
+        tags={show.genres}
+      />
 
-  return <div>This is Show Page</div>;
+      <div>
+        <h2>Details</h2>
+        <Details
+          status={show.status}
+          network={show.network}
+          premiered={show.premiered}
+        />
+      </div>
+
+      <div>
+        <h2>Seasons</h2>
+        <Seasons seasons={show._embedded.seasons} />
+      </div>
+
+      <div>
+        <h2>Cast</h2>
+        <Cast cast={show._embedded.cast} />
+      </div>
+    </div>
+  );
 };
-
 export default Show;
