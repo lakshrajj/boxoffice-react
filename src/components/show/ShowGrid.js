@@ -3,8 +3,11 @@ import ShowCard from './ShowCard';
 import { FlexGrid } from '../styled';
 
 import IMAGE_NOT_FOUND from '../../images/not-found.png';
+import { useShows } from '../../misc/custom-hooks';
 
 const ShowGrid = ({ data }) => {
+  /* eslint-disable */
+  const [starredShows, dispatchStarred] = useShows();
   return (
     <FlexGrid>
       {data.map(({ show }) => (
