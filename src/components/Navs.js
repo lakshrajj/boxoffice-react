@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+// eslint-disable-next-line
+import { NavList, LinkStyled } from './Navs.styled';
 
 const LINKS = [
   { to: '/', test: 'Home' },
@@ -7,15 +9,22 @@ const LINKS = [
 ];
 
 const Navs = () => {
+  const location = useLocation();
+
   return (
     <div>
-      <ul>
+      <NavList>
         {LINKS.map(items => (
           <li key={items.to}>
-            <Link to={items.to}>{items.test}</Link>
+            <LinkStyled
+              to={items.to}
+              className={items.to === location.pathname ? 'active' : ''}
+            >
+              {items.test}
+            </LinkStyled>
           </li>
         ))}
-      </ul>
+      </NavList>
     </div>
   );
 };
