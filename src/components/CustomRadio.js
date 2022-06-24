@@ -47,6 +47,8 @@ const RadioWrapper = styled.label`
   }
 `;
 
+console.log('render');
+
 const CustomRadio = ({ label, ...restProps }) => {
   return (
     <RadioWrapper htmlFor={restProps.id}>
