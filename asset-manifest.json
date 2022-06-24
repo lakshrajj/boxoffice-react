@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/lakshrajj/boxoffice-react/static/css/main.b2586571.css",
-    "main.js": "/lakshrajj/boxoffice-react/static/js/main.087ab7a4.js",
+    "main.js": "/lakshrajj/boxoffice-react/static/js/main.b3b13174.js",
     "service-worker.js": "/lakshrajj/boxoffice-react/service-worker.js",
     "index.html": "/lakshrajj/boxoffice-react/index.html",
     "main.b2586571.css.map": "/lakshrajj/boxoffice-react/static/css/main.b2586571.css.map",
-    "main.087ab7a4.js.map": "/lakshrajj/boxoffice-react/static/js/main.087ab7a4.js.map"
+    "main.b3b13174.js.map": "/lakshrajj/boxoffice-react/static/js/main.b3b13174.js.map"
   },
   "entrypoints": [
     "static/css/main.b2586571.css",
-    "static/js/main.087ab7a4.js"
+    "static/js/main.b3b13174.js"
   ]
 }
